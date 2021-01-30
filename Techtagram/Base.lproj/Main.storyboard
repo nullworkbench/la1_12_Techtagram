@@ -1,24 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Techtagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mer-By-wJ0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mer-By-wJ0" secondAttribute="height" multiplier="1:1" id="REV-OU-dsb"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gAj-b3-7ER">
+                                <rect key="frame" x="30" y="592" width="354" height="230"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="q1L-LV-w4c">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JST-Cj-h2N">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.91921168565750122" green="0.50595808371640039" blue="0.42386865920903771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="JST-Cj-h2N" secondAttribute="height" multiplier="1:1" id="3gR-Xp-sI8"/>
+                                                </constraints>
+                                                <state key="normal" title="Camera">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="takePhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="6mJ-S6-WXE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksA-tl-2x1">
+                                                <rect key="frame" x="254" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.91921168565750122" green="0.75143250711259402" blue="0.44570914716123861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ksA-tl-2x1" secondAttribute="height" multiplier="1:1" id="aeK-cL-jUS"/>
+                                                </constraints>
+                                                <state key="normal" title="Album">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openAlbum" destination="BYZ-38-t0r" eventType="touchUpInside" id="CBo-mf-5km"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="MUQ-TC-Kl3"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nhi-5l-DJR">
+                                        <rect key="frame" x="0.0" y="130" width="354" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHV-kb-Ekr">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.91914981322793898" green="0.91921168565750122" blue="0.61951961989459803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="EHV-kb-Ekr" secondAttribute="height" multiplier="1:1" id="GFX-B2-Kg6"/>
+                                                </constraints>
+                                                <state key="normal" title="Filter">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="colorFilter" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mk-Zv-hBj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDu-I1-LFB">
+                                                <rect key="frame" x="127" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.91914981322793898" green="0.91921168565750122" blue="0.61951961989459803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rDu-I1-LFB" secondAttribute="height" multiplier="1:1" id="LZm-iF-HPE"/>
+                                                </constraints>
+                                                <state key="normal" title="Share">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="snsPhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKx-uC-eF7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMk-Q8-Zn9">
+                                                <rect key="frame" x="254" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.91914981322793898" green="0.91921168565750122" blue="0.61951961989459803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bMk-Q8-Zn9" secondAttribute="height" multiplier="1:1" id="8nK-sz-yVC"/>
+                                                </constraints>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="savePhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2H-uU-t55"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="JTf-kB-yFQ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mer-By-wJ0" secondAttribute="trailing" id="NiS-Zh-xwF"/>
+                            <constraint firstItem="gAj-b3-7ER" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Oxd-rk-giY"/>
+                            <constraint firstItem="Mer-By-wJ0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SII-Qc-q1g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gAj-b3-7ER" secondAttribute="trailing" constant="30" id="X5e-Oq-YnO"/>
+                            <constraint firstItem="Mer-By-wJ0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yc0-V8-XLY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gAj-b3-7ER" secondAttribute="bottom" constant="40" id="luT-7t-cav"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraImageView" destination="Mer-By-wJ0" id="S3O-xG-uKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
